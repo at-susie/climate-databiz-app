@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
+
+// Modules
+$font_serif: "Playfair Display", serif;
+$font_sans: "Source Sans Pro", sans-serif;
+$font_size_caption: 0.75rem; // 12px
+$font_size_body: 1rem; // 16px
+$font_size_body_large: 1.125rem; // 18px
+$font_size_h5: 1.25rem; // 20px
+$font_size_h4: 1.5rem; // 24px
+$font_size_h3: 1.75rem; // 28px
+$font_size_h2: 2rem; // 32px
+$font_size_h1: 2.2rem; // 36px
+
+// Colors
+$blue-50: #dee5fa;
+$blue-100: #beccf5;
+$blue-300: #9db2f0;
+$blue-500: #5c7fe6;
+$blue-700: #2e4073;
+$blue-900: #090d17;
+
+$grey-100: #dadee6;
+$grey-300: #aeb2b8;
+$grey-500: #83858a;
+$grey-700: #57595c;
+$grey-900: #2c2c2e;
+$grey-1000: #161617;
+
+$transition-normal: 0.3s;
+$transition-responsive: 0.2s ease;
+
+// Mixins
+
+// Global Settings
+html {
+  font-size: 100%; // In most browsers, this defaults to 16 pixels
+  font-family: "Source Sans Pro", sans-serif;
+}
+body {
+  font-family: $font_sans;
+}
+
+section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.MainChartArea {
+  height: calc(100vh - 200px);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media (orientation: portrait) {
+    width: 120%;
+  }
+  >div:first-child {
+    //outline: crimson solid 1px;
+  }
+}
+
+.toolTipContainer {
+  background: #fff;
+  border-radius: 8px;
+  padding: 8px;
+}

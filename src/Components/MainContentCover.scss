@@ -1,0 +1,10 @@
+.Cover {
+  height: 100vh;
+  display: flex;
+  justify-content: center ;
+  align-items: center;
+  .playerWrapper {
+    width: 100%;
+    height: calc(100% - 96px);
+  }
+}

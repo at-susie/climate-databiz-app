@@ -1,0 +1,35 @@
+@import "../Global.scss";
+
+header {
+  width: 100%;
+  height: 160px;
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  color: $grey-100;
+  h1 {
+    font-size: $font_size_h1;
+    margin: 0;
+  }
+  
+}
+
+.sideMenufalse {
+  section {
+    header {
+      padding: 40px 72px;
+    }
+  }
+}
+
+@media (orientation: portrait) {
+  section {
+    header {
+      padding: 56px 24px;
+      h1 {
+        font-size: $font_size_h2;
+      }
+    }
+  }
+}
