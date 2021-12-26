@@ -4,21 +4,60 @@
   position: fixed;
   left: 0;
   top: 0;
-  height: 100vh;
+  height: 100%;
   width: 300px;
-  background: $grey-700;
+  background: $grey-800;
   color: #ffffff;
-  transition: cubic-bezier(.5,0,.5,1) 0.2s;
+  transition: $transition-expressive;
   z-index: 1;
+  color: $grey-100;
+  .appLogoContainer {
+    padding: 32px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      height: 120px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+      border-radius: 2px;
+      transition: $transition-expressive;
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+  .navMenu {
+    padding: 20px;
+    margin: 0;
+    .SideMenuItem {
+      padding: 0 0 16px 0;
+      list-style-type: none;
+      a {
+        color: $grey-100;
+        text-decoration: none;
+        transition: $transition-expressive;
+        &:hover {
+          color: #fff;
+          //font-weight: 700;
+          //transform: translateX(14px);
+        }
+      }
+    }
+  }
+  
   .navButton {
-    position: absolute;
-    right: -56px;
+    position: fixed;
+    right: -64px;
     top: 16px;
     z-index: 5000;
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
-    background: #ccc;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
     &:hover {
       cursor: pointer;
     }

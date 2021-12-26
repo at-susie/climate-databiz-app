@@ -1,35 +1,42 @@
 import React, { Component } from "react";
-import Header from "./Header";
+import Header from "../Components/Header";
+import ChartLegend from "../Components/ChartLegend";
 import { ResponsivePie } from "@nivo/pie";
-import ChartLegend from "./ChartLegend";
-import "./Transportation.scss";
+import "./Electricity.scss";
+
+
 
 const dataExample = [
   {
-    id: "Passenger cars",
-    label: "Cars, SUVs, and motorcycles",
-    value: 47,
+    id: "Coal",
+    label: "Coal",
+    value: 36,
+    color: "#F05D28",
   },
   {
-    id: "Gerbage trucks, buses, etc.",
-    label: "Gerbage trucks, buses, etc.",
-    value: 30,
+    id: "Natural gas",
+    label: "Natural gas",
+    value: 23,
+    color: "#FF9833",
   },
   {
-    id: "Cargo and cruise ships",
-    label: "Cargo and cruise ships",
+    id: "Hydropower",
+    label: "Hydropower",
+    value: 16,
+    color: "#5C7FE6",
+  },
+  {
+    id: "Nuclear",
+    label: "Nuclear",
     value: 10,
+    color: "#13AAB3",
   },
   {
-    id: "Airplanes",
-    label: "Airplanes",
-    value: 10,
-  },
-  {
-    id: "Other",
-    label: "Other",
-    value: 3,
-  },
+    id: "Renewables",
+    label: "Renewables",
+    value: 11,
+    color: "#13AAB3",
+  }
 ];
 
 const theme = {
@@ -56,8 +63,10 @@ const margin = {
 };
 
 function DonutChart(props) {
+  const windowWidth = window.innerWidth;
+  const windowHeight = window.innerHeight;
   return (
-    <div className="MainChartTransportation MainChartArea">
+    <div className="MainChartThingsWeDo MainChartArea">
       <ResponsivePie
         data={dataExample}
         valueFormat={(value) =>
@@ -66,18 +75,26 @@ function DonutChart(props) {
           })}%`
         }
         margin={margin}
-        //legends={legends}
-        innerRadius={window.innerHeight > window.innerWidth ? 0.4 : 0.7}
+        tooltip={(label) => {
+          console.log(label.datum.label);
+          return <div className="toolTipContainer">{label.datum.label}</div>;
+        }}
+        innerRadius={windowHeight > windowWidth ? 0.6 : 0.7}
         startAngle={10}
         endAngle={370}
         padAngle={0.8}
         cornerRadius={1}
         activeOuterRadiusOffset={8}
         theme={theme}
-        colors={["#79C6E3", "#F05D28", "#FF9833", "#5C7FE6", "#13AAB3"]}
+        colors={["#F05D28", "#FF9833", "#5C7FE6", "#13AAB3", "#79C6E3"]}
         radialLabelsSkipAngle={10}
         radialLabelsTextXOffset={6}
-        arcLinkLabelsTextColor="#ccc"
+        enableArcLinkLabels={windowHeight < windowWidth ? true : false}
+        arcLinkLabelsTextColor="#dadee6"
+        // arcLinkLabel={(e) => {
+        //   return (
+        //     e.id+" ("+e.label+")"
+        // )}}
         radialLabelsLinkOffset={0}
         radialLabelsLinkHorizontalLength={24}
         radialLabelsLinkStrokeWidth={1}
@@ -90,24 +107,25 @@ function DonutChart(props) {
         motionStiffness={90}
         motionDamping={15}
       />
-      <ChartLegend
-        LegendTitle="Title"
-        LegendDescription="Description"
-      />
     </div>
   );
 }
 
-function Transportation(props) {
+function Electricity(props) {
   return (
     <section id={props.id}>
       <Header
-        HeaderTitle="Transportation"
-        PageDescription="Transportation sector is responsible for 16% (8.2 billion tons) of 51 billion tons of greenhouse gases per year."
+        HeaderTitle="Electricity"
+        PageDescription="27% of 51 billion tons of greenhouse gases are produced from electricity."
       />
       <DonutChart />
+      <ChartLegend dataExample={dataExample} />
     </section>
   );
 }
 
-export default Transportation;
+
+
+
+
+export default Electricity;

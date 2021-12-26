@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import Header from "./Header";
+import Header from "../Components/Header";
+import ChartLegend from "../Components/ChartLegend";
+import DonutView from "../Components/DonutView";
 import { ResponsivePie } from "@nivo/pie";
 //import { BasicTooltip } from '@nivo/tooltip';
 import "./ThingsWeDo.scss";
@@ -60,33 +62,6 @@ const margin = {
   left: window.innerHeight > window.innerWidth ? 80 : 120,
 };
 
-function ChartLegend(props) {
-  //const color = 
-  return (
-    <ul className="chartLegendContainer">
-      {props.dataExample.map((post) => (
-        <li className="chartLegendItem" key={post.id}>
-          <div className="legendColor" style={{background: post.color}}></div>
-          <div>
-            <div className="legendTitle">{post.id}</div>
-            <div className="legendDescription">{post.label}</div>
-          </div>
-        </li>
-      ))}
-    </ul>
-  );
-}
-
-function DonutView(props) {
-  return (
-    <div className="DonutViewContainer">
-      <div className="BigNumber">
-        <div className="amountCO">51</div>
-        <div className="unitCO">billion tons / year</div>
-      </div>
-    </div>
-  );
-}
 
 function DonutChart(props) {
   const windowWidth = window.innerWidth;
@@ -133,8 +108,10 @@ function DonutChart(props) {
         motionStiffness={90}
         motionDamping={15}
       />
-      <DonutView />
-      
+      <DonutView
+        emphasizedValue="51"
+        unitType="billion tons / year"
+      />
     </div>
   );
 }

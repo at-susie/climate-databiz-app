@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./MainContainer.scss";
-import ThingsWeDo from "./ThingsWeDo";
-import Electricity from "./Electricity";
+import MainContentCover from "./MainContentCover";
+import ThingsWeDo from "../Page/ThingsWeDo";
+import Electricity from "../Page/Electricity";
+import Transportation from "../Page/Transportation";
+import IsNuclearPowerDangerous from "../Page/IsNuclearPowerDangerous";
 
 const windowWidth = window.innerWidth;
 const breakPoint = 960;
@@ -19,8 +22,11 @@ function MainContainer(props) {
 
   return (
     <div className={`mainContainer ${isMobile ? "isMobile" : "isDesktop"}`}>
-      <ThingsWeDo />
-      <Electricity />
+      <MainContentCover id="sectionCover"/>
+      <ThingsWeDo id="sectionThingsWeDo" />
+      <Electricity id="sectionElectricity" />
+      <Transportation id="sectionTransportation" />
+      <IsNuclearPowerDangerous id="sectionNuclear" />
     </div>
   );
 }

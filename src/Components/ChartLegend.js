@@ -1,23 +1,21 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
 import "./ChartLegend.scss";
 
 function ChartLegend(props) {
-  const [isOpen, setOpen] = useState(false);
-  const windowWidth = window.innerWidth;
-
+  //const color = 
   return (
-    <li>
-      <div className="LegendTitle">
-        <div className="HeaderIcons"></div>
-        <div>{props.LegendTitle}</div>
-      </div>
-      <div className="LegendDescription">{props.LegendDescription}</div>
-    </li>
+    <ul className="chartLegendContainer">
+      {props.dataExample.map((post) => (
+        <li className="chartLegendItem" key={post.id}>
+          <div className="legendColor" style={{ background: post.color }}></div>
+          <div>
+            <div className="legendTitle">{post.id}</div>
+            <div className="legendDescription">{post.label}</div>
+          </div>
+        </li>
+      ))}
+    </ul>
   );
 }
 
-
-
-
 export default ChartLegend;
-

@@ -3,10 +3,10 @@ import "./App.scss";
 import React, { useState } from "react";
 import MainSideMenu from "./Components/MainSideMenu";
 import MainContentCover from "./Components/MainContentCover";
-import ThingsWeDo from "./Components/ThingsWeDo";
-import Electricity from "./Components/Electricity";
-import Transportation from "./Components/Transportation";
-import IsNuclearPowerDangerous from "./Components/IsNuclearPowerDangerous";
+import ThingsWeDo from "./Page/ThingsWeDo";
+import Electricity from "./Page/Electricity";
+import Transportation from "./Page/Transportation";
+import IsNuclearPowerDangerous from "./Page/IsNuclearPowerDangerous";
 
 function App(props) {
 

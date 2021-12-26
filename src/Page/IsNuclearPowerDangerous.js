@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Header from "./Header";
+import Header from "../Components/Header";
 import { ResponsiveBar } from "@nivo/bar";
 import "./IsNuclearPowerDangerous.scss";
 
