@@ -3,59 +3,110 @@ import Header from "../Components/Header";
 import { ResponsiveBar } from "@nivo/bar";
 import "./IsNuclearPowerDangerous.scss";
 
+
 const dataExample = [
   {
     id: "Coal",
     label: "Coal",
     value: 24.6,
+    color: "#F05D28",
+    unit: "%"
   },
   {
     id: "Oil",
     label: "Oil",
     value: 18.4,
+    color: "#FF9833",
+    unit: "%"
   },
   {
     id: "Biomass",
     label: "Biomass",
     value: 4.6,
+    color: "#5C7FE6",
+    unit: "%"
   },
   {
     id: "Gas",
     label: "Gas",
     value: 2.8,
+    color: "#13AAB3",
+    unit: "%"
   },
   {
     id: "Nuclear",
     label: "Nuclear",
     value: 0.07,
+    color: "#13AAB3",
+    unit: "%"
   },
 ];
 
+
 const theme = {
-  labels: { 
-    text: { 
-      fontSize: 16,
-      textColor: '#ccc',
-    } 
-  },
-  legends: {
-    text: {
-      fontSize: 16,
-      textColor: '#ccc',
+  background: "#2c2c2e",
+  axis: {
+    textColor: "#ccc",
+    fontSize: "18px",
+    tickColor: "#eee",
+    ticks: {
+      line: {
+        stroke: "#555555"
+      },
+      text: {
+        fill: "#ffffff"
+      }
     },
+    legend: {
+      text: {
+        fill: "#aaaaaa"
+      }
+    }
   },
+  grid: {
+    line: {
+      stroke: "#555555"
+    }
+  }
 };
+
+
+const ValueOutside = ({ bars }) => {
+  return bars.map((bar) => {
+    const {
+      key,
+      width,
+      height,
+      x,
+      y,
+      data: {
+        value,
+        unit 
+      }
+    } = bar;
+    return (
+      <g key={key} transform={`translate(${x + width/2}, ${y - 10})`}>
+        <text
+          //transform={`translate(${width}, ${height })`}
+          textAnchor="middle"
+          fontSize="16px"
+          fontWeight={600}
+          fill= "#ccc"
+        >
+          {/* YOUR LABEL HERE */}
+          {value} {"%"}
+        </text>
+      </g>
+    );
+  });
+};
+
 
 function BarChart(props) {
   return (
     <div className="MainChartContainerIsNuclear MainChartArea">
       <ResponsiveBar
         data={dataExample}
-        valueFormat={(value) =>
-          `${Number(value).toLocaleString("ru-RU", {
-            minimumFractionDigits: 2,
-          })} %`
-        }
         margin={{
           top: 80,
           right: 120,
@@ -67,19 +118,8 @@ function BarChart(props) {
         cornerRadius={1}
         activeOuterRadiusOffset={8}
         theme={theme}
-        colors={["#79C6E3", "#F05D28", "#FF9833", "#5C7FE6", "#13AAB3"]}
-        radialLabelsSkipAngle={10}
-        radialLabelsTextXOffset={6}
-        radialLabelsTextColor="#333333"
-        radialLabelsLinkOffset={0}
-        radialLabelsLinkDiagonalLength={16}
-        radialLabelsLinkHorizontalLength={24}
-        radialLabelsLinkStrokeWidth={1}
-        radialLabelsLinkColor={{
-          from: "color",
-        }}
-        slicesLabelsSkipAngle={10}
-        slicesLabelsTextColor="#333333"
+        label={false}
+        //colors={["#79C6E3", "#F05D28", "#FF9833", "#5C7FE6", "#13AAB3"]}
         animate={true}
         motionStiffness={90}
         motionDamping={15}
@@ -87,11 +127,20 @@ function BarChart(props) {
           tickSize: 5,
           tickPadding: 5,
           tickRotation: 0,
-          legend: "Deaths per TWh",
+          legend: "Deaths per TWh (%)",
           legendPosition: "middle",
           legendOffset: -60,
-          fontSize: 20,
+          fontSize: 24,
         }}
+        layers={[
+          "grid",
+          "axes",
+          "bars",
+          "markers",
+          "legends",
+          "annotations",
+          (props) => <ValueOutside {...props} />
+        ]}
       />
     </div>
   );

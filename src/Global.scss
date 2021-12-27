@@ -46,6 +46,7 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   position: relative;
   outline: solid 1px blue;
   overflow: hidden;
@@ -60,9 +61,7 @@ section {
   overflow: hidden;
   @media (orientation: portrait) {
     width: 120%;
-  }
-  >div:first-child {
-    //outline: crimson solid 1px;
+    height: calc(100vh - 320px);
   }
 }
 
@@ -72,9 +71,3 @@ section {
   padding: 8px;
 }
 
-.hamburger-react {
-  transition-delay: .2s !important;
-  div {
-    transition-delay: .2s !important;
-  }
-}
