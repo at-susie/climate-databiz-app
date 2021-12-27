@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
 
+
 // Modules
 $font_serif: "Playfair Display", serif;
 $font_sans: "Source Sans Pro", sans-serif;
@@ -17,6 +18,7 @@ $blue-50: #dee5fa;
 $blue-100: #beccf5;
 $blue-300: #9db2f0;
 $blue-500: #5c7fe6;
+$blue-800: #2e4073;
 $blue-700: #2e4073;
 $blue-900: #090d17;
 
@@ -24,19 +26,17 @@ $grey-100: #dadee6;
 $grey-300: #aeb2b8;
 $grey-500: #83858a;
 $grey-700: #57595c;
+$grey-800: #393a3c;
 $grey-900: #2c2c2e;
 $grey-1000: #161617;
 
 $transition-normal: 0.3s;
 $transition-responsive: 0.2s ease;
+$transition-expressive: cubic-bezier(.5,0,.5,1) 0.2s;
 
 // Mixins
 
 // Global Settings
-html {
-  font-size: 100%; // In most browsers, this defaults to 16 pixels
-  font-family: "Source Sans Pro", sans-serif;
-}
 body {
   font-family: $font_sans;
 }
@@ -46,7 +46,10 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   position: relative;
+  outline: solid 1px blue;
+  overflow: hidden;
 }
 
 .MainChartArea {
@@ -55,11 +58,10 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
   @media (orientation: portrait) {
     width: 120%;
-  }
-  >div:first-child {
-    //outline: crimson solid 1px;
+    height: calc(100vh - 320px);
   }
 }
 
@@ -68,3 +70,4 @@ section {
   border-radius: 8px;
   padding: 8px;
 }
+

@@ -12,8 +12,7 @@ body {
   min-height: 100vh;
   max-width: 100vw;
   margin: 0;
-  //background: $grey-900;
-  background: red;
+  background: $grey-900;
 }
 
 #layout {
@@ -49,14 +48,6 @@ body {
   flex-grow: 1;
   width: 100%;
   transition: var(--secs);
-  // .header { background: linear-gradient(to right, var(--bg-left), var(--bg-right));
-  //   @media (orientation: landscape) {
-  //     .title { transition: left var(--secs), right var(--secs);
-  //       &.left-closed { left: var(--header-height); }
-  //       &.right-closed { right: var(--header-height); }
-  //     }
-  //   }
-  // }
 }
 
 // Style in common for both sidebars:
@@ -67,7 +58,7 @@ body {
   @media (orientation: landscape) {
     &.open { 
       width: calc(1% * var(--landscape-width));
-      //transition: var(--secs);
+      transition: var(--secs);
     }
   } // <-- Landscape ONLY sidebars
   .icon {

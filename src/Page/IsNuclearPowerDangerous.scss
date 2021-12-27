@@ -1,0 +1,10 @@
+@import "../Global.scss";
+
+.MainChartContainerIsNuclear {
+  height: calc(100vh - 240px);
+  @media (max-width: 400px) {
+    width: 130% !important;
+    transform: translateX(24px);
+  }
+}
+

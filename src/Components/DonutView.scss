@@ -1,0 +1,30 @@
+@import "../Global.scss";
+
+.DonutViewContainer {
+  color: #fff;
+  //outline: 1px solid red;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -160px;
+  margin-top: -220px;
+  width: 320px;
+  height: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .BigNumber {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .emphasizedValue {
+      font-size: 6.0rem;
+      font-weight: 600;
+    }
+    .unitType {
+      font-size: $font_size_body;
+      opacity: 0.8;
+    }
+  }
+  }

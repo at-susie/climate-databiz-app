@@ -1,0 +1,9 @@
+@import "../Global.scss";
+
+.mainContainer  {
+  z-index: 0;
+  position: relative;
+  &.isDesktop {
+      margin-left: 300px;
+  }
+}
