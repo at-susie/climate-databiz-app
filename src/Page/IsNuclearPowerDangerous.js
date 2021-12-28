@@ -44,7 +44,7 @@ const data = [
 
 
 const theme = {
-  background: "#2c2c2e",
+  //background: "#2c2c2e",
   fontSize: "14px",
   axis: {
     textColor: "#ccc",
