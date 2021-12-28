@@ -6,7 +6,7 @@ import "./Electricity.scss";
 
 
 
-const dataExample = [
+const data = [
   {
     id: "Coal",
     label: "Coal",
@@ -56,10 +56,10 @@ const theme = {
 };
 
 const margin = {
-  top: window.innerHeight > window.innerWidth ? 60 : 80,
-  right: window.innerHeight > window.innerWidth ? 80 : 120,
-  bottom: window.innerHeight > window.innerWidth ? 160 : 200,
-  left: window.innerHeight > window.innerWidth ? 80 : 120,
+  top: window.innerHeight > window.innerWidth ? 8 : 40,
+  right: window.innerHeight > window.innerWidth ? 20 : 40,
+  bottom: window.innerHeight > window.innerWidth ? 8 : 40,
+  left: window.innerHeight > window.innerWidth ? 20 : 40,
 };
 
 function DonutChart(props) {
@@ -68,7 +68,7 @@ function DonutChart(props) {
   return (
     <div className="MainChartThingsWeDo MainChartArea">
       <ResponsivePie
-        data={dataExample}
+        data={data}
         valueFormat={(value) =>
           `${Number(value).toLocaleString("ru-RU", {
             minimumFractionDigits: 0,
@@ -119,7 +119,7 @@ function Electricity(props) {
         PageDescription="27% of 51 billion tons of greenhouse gases are produced from electricity."
       />
       <DonutChart />
-      <ChartLegend dataExample={dataExample} />
+      <ChartLegend dataExample={data} />
     </section>
   );
 }

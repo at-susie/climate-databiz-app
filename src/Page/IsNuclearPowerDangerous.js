@@ -4,7 +4,7 @@ import { ResponsiveBar } from "@nivo/bar";
 import "./IsNuclearPowerDangerous.scss";
 
 
-const dataExample = [
+const data = [
   {
     id: "Coal",
     label: "Coal",
@@ -45,9 +45,9 @@ const dataExample = [
 
 const theme = {
   background: "#2c2c2e",
+  fontSize: "14px",
   axis: {
     textColor: "#ccc",
-    fontSize: "18px",
     tickColor: "#eee",
     ticks: {
       line: {
@@ -68,6 +68,13 @@ const theme = {
       stroke: "#555555"
     }
   }
+};
+
+const margin = {
+  top: window.innerHeight > window.innerWidth ? 40 : 80,
+  right: window.innerHeight > window.innerWidth ? 24 : 160,
+  bottom: window.innerHeight > window.innerWidth ? 56 : 80,
+  left: window.innerHeight > window.innerWidth ? 72 : 160,
 };
 
 
@@ -106,17 +113,8 @@ function BarChart(props) {
   return (
     <div className="MainChartContainerIsNuclear MainChartArea">
       <ResponsiveBar
-        data={dataExample}
-        margin={{
-          top: 80,
-          right: 120,
-          bottom: 200,
-          left: 120,
-        }}
-        innerRadius={0.7}
-        padAngle={0.8}
-        cornerRadius={1}
-        activeOuterRadiusOffset={8}
+        data={data}
+        margin={margin}
         theme={theme}
         label={false}
         //colors={["#79C6E3", "#F05D28", "#FF9833", "#5C7FE6", "#13AAB3"]}
@@ -129,8 +127,8 @@ function BarChart(props) {
           tickRotation: 0,
           legend: "Deaths per TWh (%)",
           legendPosition: "middle",
-          legendOffset: -60,
-          fontSize: 24,
+          legendOffset: -40,
+          fontSize: "14px",
         }}
         layers={[
           "grid",

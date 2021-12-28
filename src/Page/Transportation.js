@@ -55,10 +55,10 @@ const theme = {
 };
 
 const margin = {
-  top: window.innerHeight > window.innerWidth ? 60 : 80,
-  right: window.innerHeight > window.innerWidth ? 80 : 120,
-  bottom: window.innerHeight > window.innerWidth ? 160 : 200,
-  left: window.innerHeight > window.innerWidth ? 80 : 120,
+  top: window.innerHeight > window.innerWidth ? 8 : 40,
+  right: window.innerHeight > window.innerWidth ? 20 : 40,
+  bottom: window.innerHeight > window.innerWidth ? 8 : 40,
+  left: window.innerHeight > window.innerWidth ? 20 : 40,
 };
 
 

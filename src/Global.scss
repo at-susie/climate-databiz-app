@@ -48,8 +48,21 @@ section {
   align-items: center;
   justify-content: flex-start;
   position: relative;
-  outline: solid 1px blue;
   overflow: hidden;
+  @media (max-width: 400px) {
+    height: auto;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 1px;
+    width: calc(100% - 64px);
+    background: $grey-700;
+    @media (orientation: portrait) {
+      width: calc(100% - 48px);
+    }
+  }
 }
 
 .MainChartArea {
@@ -60,8 +73,7 @@ section {
   align-items: center;
   overflow: hidden;
   @media (orientation: portrait) {
-    width: 120%;
-    height: calc(100vh - 320px);
+    height: 360px;
   }
 }
 
