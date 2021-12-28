@@ -35,6 +35,10 @@ function SideNav(props) {
     }
   }
 
+  const handleCloseNav = () => {
+    setDrawerOpen(false)
+  }
+
   // create an event listener
   useEffect(() => {
     window.addEventListener('load', pageLoad);
@@ -44,32 +48,32 @@ function SideNav(props) {
   return (
     <div className={`sideNav ${(isMobile) ? "isMobile" : "isDesktop"} ${(drawerOpen) ? "drawerOpen" : "drawerClose"}`}>
       <div className="appLogoContainer">
-        <AnchorLink href="#sectionCover">
+        <AnchorLink href="#sectionCover" onClick={handleCloseNav}>
           <img src={BookThumbnail} alt="Book thumbnail" />
         </AnchorLink>
       </div>
       <ul className="navMenu">
         <li className="SideMenuItem">
-          <AnchorLink href="#sectionThingsWeDo">
+          <AnchorLink href="#sectionThingsWeDo" onClick={handleCloseNav}>
             How much greenhouse gas is emitted by the things we do?
           </AnchorLink>
         </li>
         <li className="SideMenuItem">
-          <AnchorLink href="#sectionElectricity">
+          <AnchorLink href="#sectionElectricity" onClick={handleCloseNav}>
             Electricity
           </AnchorLink>
         </li>
         <li className="SideMenuItem">
-          <AnchorLink href="#sectionTransportation">
+          <AnchorLink href="#sectionTransportation" onClick={handleCloseNav}>
             Transportation
           </AnchorLink>
         </li>
         <li className="SideMenuItem">
-          <AnchorLink href="#sectionNuclear">
+          <AnchorLink href="#sectionNuclear" onClick={handleCloseNav}>
             Is nuclear power dangerous?
           </AnchorLink>
         </li>
-        <li className="SideMenuItem">
+        <li className="SideMenuItem" onClick={handleCloseNav}>
           <AnchorLink href="#test3">
             Comparison in death rate between COVID-19 and climate change
           </AnchorLink>
