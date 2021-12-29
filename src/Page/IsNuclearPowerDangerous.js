@@ -3,45 +3,43 @@ import Header from "../Components/Header";
 import { ResponsiveBar } from "@nivo/bar";
 import "./IsNuclearPowerDangerous.scss";
 
-
 const data = [
   {
     id: "Coal",
     label: "Coal",
     value: 24.6,
     color: "#F05D28",
-    unit: "%"
+    unit: "%",
   },
   {
     id: "Oil",
     label: "Oil",
     value: 18.4,
     color: "#FF9833",
-    unit: "%"
+    unit: "%",
   },
   {
     id: "Biomass",
     label: "Biomass",
     value: 4.6,
     color: "#5C7FE6",
-    unit: "%"
+    unit: "%",
   },
   {
     id: "Gas",
     label: "Gas",
     value: 2.8,
     color: "#13AAB3",
-    unit: "%"
+    unit: "%",
   },
   {
     id: "Nuclear",
     label: "Nuclear",
     value: 0.07,
     color: "#13AAB3",
-    unit: "%"
+    unit: "%",
   },
 ];
-
 
 const theme = {
   //background: "#2c2c2e",
@@ -51,32 +49,31 @@ const theme = {
     tickColor: "#eee",
     ticks: {
       line: {
-        stroke: "#555555"
+        stroke: "#555555",
       },
       text: {
-        fill: "#ffffff"
-      }
+        fill: "#ffffff",
+      },
     },
     legend: {
       text: {
-        fill: "#aaaaaa"
-      }
-    }
+        fill: "#aaaaaa",
+      },
+    },
   },
   grid: {
     line: {
-      stroke: "#555555"
-    }
-  }
+      stroke: "#555555",
+    },
+  },
 };
 
 const margin = {
-  top: window.innerHeight > window.innerWidth ? 40 : 80,
+  top: window.innerHeight > window.innerWidth ? 40 : 40,
   right: window.innerHeight > window.innerWidth ? 24 : 160,
   bottom: window.innerHeight > window.innerWidth ? 56 : 80,
   left: window.innerHeight > window.innerWidth ? 72 : 160,
 };
-
 
 const ValueOutside = ({ bars }) => {
   return bars.map((bar) => {
@@ -86,19 +83,16 @@ const ValueOutside = ({ bars }) => {
       height,
       x,
       y,
-      data: {
-        value,
-        unit 
-      }
+      data: { value, unit },
     } = bar;
     return (
-      <g key={key} transform={`translate(${x + width/2}, ${y - 10})`}>
+      <g key={key} transform={`translate(${x + width / 2}, ${y - 10})`}>
         <text
           //transform={`translate(${width}, ${height })`}
           textAnchor="middle"
           fontSize="16px"
           fontWeight={600}
-          fill= "#ccc"
+          fill="#ccc"
         >
           {/* YOUR LABEL HERE */}
           {value} {"%"}
@@ -107,7 +101,6 @@ const ValueOutside = ({ bars }) => {
     );
   });
 };
-
 
 function BarChart(props) {
   return (
@@ -137,7 +130,7 @@ function BarChart(props) {
           "markers",
           "legends",
           "annotations",
-          (props) => <ValueOutside {...props} />
+          (props) => <ValueOutside {...props} />,
         ]}
       />
     </div>
@@ -149,12 +142,25 @@ function IsNuclearPowerDangerous(props) {
     <section id={props.id}>
       <Header
         HeaderTitle="Is nuclear power dangerous?"
-        PageDescription="It's the only carbon-free energy source that can reliably deliver power day and night, through every season, almost everywhere on earth that has been proven to work on a large scale. No other clean energy source even comes close to what nuclear already provides today. "
+        PageDescription="It's the only carbon-free energy source that can reliably deliver power day and night, through every season, almost everywhere on earth that has been proven to work on a large scale. No other clean energy source even comes close to what nuclear already provides today. No other clean energy source even comes close to what nuclear already provides today."
       />
+      <h3>The number of death caused per unit of electricity</h3>
       <BarChart />
+      <div className="plainDescription">
+        <p>
+          But of course one of the biggest problems is that the nuclear power
+          generation has been widely recognized just dangerous. High-profile
+          accidents at Three Mile Island in the United States, Chernobyl, and
+          Fukushima put a spotlight on all these risks. But the real problem is
+          that we just stopped trying to advance the field.
+        </p>
+        <p>
+          Nuclear power kills far, far fewer people than cars do. For that
+          matter, it kills far fewer people than any fossil fuel.
+        </p>
+      </div>
     </section>
   );
 }
-
 
 export default IsNuclearPowerDangerous;

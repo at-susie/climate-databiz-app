@@ -6,6 +6,7 @@ import Electricity from "../Page/Electricity";
 import Transportation from "../Page/Transportation";
 import IsNuclearPowerDangerous from "../Page/IsNuclearPowerDangerous";
 import HowMuchSpace from "../Page/HowMuchSpace";
+import CovidClimate from "../Page/CovidClimate";
 
 const windowWidth = window.innerWidth;
 const breakPoint = 960;
@@ -29,7 +30,7 @@ function MainContainer(props) {
       <HowMuchSpace id="sectionHowMuchSpace" />
       <Transportation id="sectionTransportation" />
       <IsNuclearPowerDangerous id="sectionNuclear" />
-      
+      <CovidClimate id="sectionCovidClimate"/>
     </div>
   );
 }
