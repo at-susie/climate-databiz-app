@@ -149,7 +149,7 @@ function IsNuclearPowerDangerous(props) {
     <section id={props.id}>
       <Header
         HeaderTitle="Is nuclear power dangerous?"
-        PageDescription="Not if you're counting the bumber of death caused per unit of electricity, as this chart shows. The numbers here cover the entire process of generating energy, from extracting fuels to turning them into electricity, as well as the environmental problems they cause, such as air pollution."
+        PageDescription="It's the only carbon-free energy source that can reliably deliver power day and night, through every season, almost everywhere on earth that has been proven to work on a large scale. No other clean energy source even comes close to what nuclear already provides today. "
       />
       <BarChart />
     </section>

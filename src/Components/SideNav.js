@@ -64,6 +64,11 @@ function SideNav(props) {
           </AnchorLink>
         </li>
         <li className="SideMenuItem">
+          <AnchorLink href="#sectionHowMuchSpace" onClick={handleCloseNav}>
+            How much power can we generate per square meter?
+          </AnchorLink>
+        </li>
+        <li className="SideMenuItem">
           <AnchorLink href="#sectionTransportation" onClick={handleCloseNav}>
             Transportation
           </AnchorLink>

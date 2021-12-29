@@ -5,6 +5,7 @@ import ThingsWeDo from "../Page/ThingsWeDo";
 import Electricity from "../Page/Electricity";
 import Transportation from "../Page/Transportation";
 import IsNuclearPowerDangerous from "../Page/IsNuclearPowerDangerous";
+import HowMuchSpace from "../Page/HowMuchSpace";
 
 const windowWidth = window.innerWidth;
 const breakPoint = 960;
@@ -25,8 +26,10 @@ function MainContainer(props) {
       <MainContentCover id="sectionCover"/>
       <ThingsWeDo id="sectionThingsWeDo" />
       <Electricity id="sectionElectricity" />
+      <HowMuchSpace id="sectionHowMuchSpace" />
       <Transportation id="sectionTransportation" />
       <IsNuclearPowerDangerous id="sectionNuclear" />
+      
     </div>
   );
 }
