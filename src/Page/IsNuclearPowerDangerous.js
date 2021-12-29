@@ -69,9 +69,9 @@ const theme = {
 };
 
 const margin = {
-  top: window.innerHeight > window.innerWidth ? 40 : 40,
+  top: window.innerHeight > window.innerWidth ? 20 : 40,
   right: window.innerHeight > window.innerWidth ? 24 : 160,
-  bottom: window.innerHeight > window.innerWidth ? 56 : 80,
+  bottom: window.innerHeight > window.innerWidth ? 32 : 40,
   left: window.innerHeight > window.innerWidth ? 72 : 160,
 };
 
@@ -105,34 +105,36 @@ const ValueOutside = ({ bars }) => {
 function BarChart(props) {
   return (
     <div className="MainChartContainerIsNuclear MainChartArea">
-      <ResponsiveBar
-        data={data}
-        margin={margin}
-        theme={theme}
-        label={false}
-        //colors={["#79C6E3", "#F05D28", "#FF9833", "#5C7FE6", "#13AAB3"]}
-        animate={true}
-        motionStiffness={90}
-        motionDamping={15}
-        axisLeft={{
-          tickSize: 5,
-          tickPadding: 5,
-          tickRotation: 0,
-          legend: "Deaths per TWh (%)",
-          legendPosition: "middle",
-          legendOffset: -40,
-          fontSize: "14px",
-        }}
-        layers={[
-          "grid",
-          "axes",
-          "bars",
-          "markers",
-          "legends",
-          "annotations",
-          (props) => <ValueOutside {...props} />,
-        ]}
-      />
+      <div className="barchartContainer">
+        <ResponsiveBar
+          data={data}
+          margin={margin}
+          theme={theme}
+          label={false}
+          //colors={["#79C6E3", "#F05D28", "#FF9833", "#5C7FE6", "#13AAB3"]}
+          animate={true}
+          motionStiffness={90}
+          motionDamping={15}
+          axisLeft={{
+            tickSize: 5,
+            tickPadding: 5,
+            tickRotation: 0,
+            legend: "Deaths per TWh (%)",
+            legendPosition: "middle",
+            legendOffset: -40,
+            fontSize: "14px",
+          }}
+          layers={[
+            "grid",
+            "axes",
+            "bars",
+            "markers",
+            "legends",
+            "annotations",
+            (props) => <ValueOutside {...props} />,
+          ]}
+        />
+      </div>
     </div>
   );
 }
@@ -148,15 +150,11 @@ function IsNuclearPowerDangerous(props) {
       <BarChart />
       <div className="plainDescription">
         <p>
-          But of course one of the biggest problems is that the nuclear power
-          generation has been widely recognized just dangerous. High-profile
-          accidents at Three Mile Island in the United States, Chernobyl, and
-          Fukushima put a spotlight on all these risks. But the real problem is
-          that we just stopped trying to advance the field.
-        </p>
-        <p>
-          Nuclear power kills far, far fewer people than cars do. For that
-          matter, it kills far fewer people than any fossil fuel.
+          One of the biggest problems is that the nuclear power generation has
+          been widely recognized just dangerous. High-profile accidents at Three
+          Mile Island in the United States, Chernobyl, and Fukushima put a
+          spotlight on all these risks. But the real problem is that we just
+          stopped trying to advance the field.
         </p>
       </div>
     </section>

@@ -1,14 +1,21 @@
 @import "../Global.scss";
 
 #sectionNuclear {
+  h3,
   .plainDescription {
-    padding: 8px 32px 32px 32px;
+    padding: 16px 32px 24px 32px;
+    @media (orientation: portrait) {
+      padding: 4px 20px 4px 20px;
+    }
   }
 }
 
-.MainChartContainerIsNuclear {
-  height: calc(100vh - 280px);
+.barchartContainer {
+  width: 100%;
+  //height: calc(100vh - 280px);
+  height: 520px;
+  z-index: 5000;
   @media (max-width: 400px) {
+    height: 320px;
   }
 }
-
