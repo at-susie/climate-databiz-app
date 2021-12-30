@@ -1,53 +1,57 @@
 import React, { useState, useEffect } from "react";
 import "./SideNav.scss";
-import AnchorLink from 'react-anchor-link-smooth-scroll'
-import { Slant as Hamburger } from 'hamburger-react'
-import BookThumbnail from '../Assets/BookThumbnail.jpg';
+import AnchorLink from "react-anchor-link-smooth-scroll";
+import { Slant as Hamburger } from "hamburger-react";
+import BookThumbnail from "../Assets/BookThumbnail.jpg";
 
 const windowWidth = window.innerWidth;
 const breakPoint = 960;
 
 function SideNav(props) {
-  const [isMobile, setIsMobile] = useState(true)
-  const [drawerOpen, setDrawerOpen] = useState(false)
-  const [isOpen, setOpen] = useState(false)
+  const [isMobile, setIsMobile] = useState(true);
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [isOpen, setOpen] = useState(false);
 
-  //choose the screen size 
+  //choose the screen size
   const handleResize = () => {
-    console.log("Page resize")
+    console.log("Page resize");
     if (window.innerWidth < breakPoint) {
-      setIsMobile(true)
+      setIsMobile(true);
     } else {
-      setIsMobile(false)
+      setIsMobile(false);
     }
-  }
+  };
 
   const handleDrawer = () => {
-    console.log("Click button")
-    setDrawerOpen(s => !s)
-  }
+    console.log("Click button");
+    setDrawerOpen((s) => !s);
+  };
 
   const pageLoad = () => {
-    console.log("Page load")
+    console.log("Page load");
     if (window.innerWidth < breakPoint) {
-      setIsMobile(true)
+      setIsMobile(true);
     } else {
-      setIsMobile(false)
+      setIsMobile(false);
     }
-  }
+  };
 
   const handleCloseNav = () => {
-    setDrawerOpen(false)
-  }
+    setDrawerOpen(false);
+  };
 
   // create an event listener
   useEffect(() => {
-    window.addEventListener('load', pageLoad);
+    window.addEventListener("load", pageLoad);
     window.addEventListener("resize", handleResize);
-  })
+  });
 
   return (
-    <div className={`sideNav ${(isMobile) ? "isMobile" : "isDesktop"} ${(drawerOpen) ? "drawerOpen" : "drawerClose"}`}>
+    <div
+      className={`sideNav ${isMobile ? "isMobile" : "isDesktop"} ${
+        drawerOpen ? "drawerOpen" : "drawerClose"
+      }`}
+    >
       <div className="appLogoContainer">
         <AnchorLink href="#sectionCover" onClick={handleCloseNav}>
           <img src={BookThumbnail} alt="Book thumbnail" />
@@ -70,13 +74,13 @@ function SideNav(props) {
           </AnchorLink>
         </li>
         <li className="SideMenuItem">
-          <AnchorLink href="#sectionTransportation" onClick={handleCloseNav}>
-            Greenhouse gas emitted from transportation
+          <AnchorLink href="#sectionNuclear" onClick={handleCloseNav}>
+            Is nuclear power dangerous?
           </AnchorLink>
         </li>
         <li className="SideMenuItem">
-          <AnchorLink href="#sectionNuclear" onClick={handleCloseNav}>
-            Is nuclear power dangerous?
+          <AnchorLink href="#sectionTransportation" onClick={handleCloseNav}>
+            Greenhouse gas emitted from transportation
           </AnchorLink>
         </li>
         <li className="SideMenuItem">

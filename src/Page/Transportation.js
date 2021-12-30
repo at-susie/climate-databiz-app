@@ -5,7 +5,7 @@ import ChartLegend from "../Components/ChartLegend";
 import DonutView from "../Components/DonutView";
 import "./Transportation.scss";
 
-const dataExample = [
+const data = [
   {
     id: "Passenger cars",
     label: "Cars, SUVs, and motorcycles",
@@ -69,7 +69,7 @@ function DonutChart(props) {
   return (
     <div className="MainChartThingsWeDo MainChartArea">
       <ResponsivePie
-        data={dataExample}
+        data={data}
         valueFormat={(value) =>
           `${Number(value).toLocaleString("ru-RU", {
             minimumFractionDigits: 0,
@@ -125,7 +125,7 @@ function Transportation(props) {
         PageDescription="Transportation sector is responsible for 16% (8.2 billion tons) of 51 billion tons of greenhouse gases per year."
       />
       <DonutChart />
-      <ChartLegend dataExample={dataExample} />
+      <ChartLegend dataExample={data} />
     </section>
   );
 }

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Header from "../Components/Header";
 import { ResponsiveBar } from "@nivo/bar";
 import "./IsNuclearPowerDangerous.scss";
+import { color, style } from "@mui/system";
 
 const data = [
   {
@@ -111,6 +112,10 @@ function BarChart(props) {
           margin={margin}
           theme={theme}
           label={false}
+          tooltip={(datum) => {
+            console.log(datum.value);
+            return <div className="toolTipContainer">{datum.value}%</div>;
+          }}
           //colors={["#79C6E3", "#F05D28", "#FF9833", "#5C7FE6", "#13AAB3"]}
           animate={true}
           motionStiffness={90}

@@ -39,7 +39,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    //overflow: hidden;
     @media (orientation: portrait) {
       height: calc(100vh - 320px);
     }
@@ -49,6 +49,7 @@ section {
     background: #fff;
     border-radius: 8px;
     padding: 8px;
+    color: $grey-1000;
   }
   
   

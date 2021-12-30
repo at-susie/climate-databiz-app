@@ -97,6 +97,10 @@ function BarChart(props) {
           theme={theme}
           label={d => `${d.value}` + " per 100,000 people"}
           //colors={["#79C6E3", "#F05D28", "#FF9833", "#5C7FE6", "#13AAB3"]}
+          tooltip={(datum) => {
+            //console.log(datum.unit);
+            return <div className="toolTipContainer">{datum.value} deaths per 100,000 people</div>;
+          }}
           animate={true}
           motionStiffness={90}
           motionDamping={15}

@@ -28,8 +28,8 @@ function MainContainer(props) {
       <ThingsWeDo id="sectionThingsWeDo" />
       <Electricity id="sectionElectricity" />
       <HowMuchSpace id="sectionHowMuchSpace" />
-      <Transportation id="sectionTransportation" />
       <IsNuclearPowerDangerous id="sectionNuclear" />
+      <Transportation id="sectionTransportation" />
       <CovidClimate id="sectionCovidClimate"/>
     </div>
   );

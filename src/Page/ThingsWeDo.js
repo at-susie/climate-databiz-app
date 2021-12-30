@@ -6,7 +6,7 @@ import { ResponsivePie } from "@nivo/pie";
 //import { BasicTooltip } from '@nivo/tooltip';
 import "./ThingsWeDo.scss";
 
-const dataExample = [
+const data = [
   {
     id: "Making things",
     label: "Cement, steel, plastic",
@@ -70,7 +70,7 @@ function DonutChart(props) {
   return (
     <div className="MainChartThingsWeDo MainChartArea">
       <ResponsivePie
-        data={dataExample}
+        data={data}
         valueFormat={(value) =>
           `${Number(value).toLocaleString("ru-RU", {
             minimumFractionDigits: 0,
@@ -125,7 +125,7 @@ function ThingsWeDo(props) {
         PageDescription="And we have to make it zero to avoid catastrophic disasters"
       />
       <DonutChart />
-      <ChartLegend dataExample={dataExample} />
+      <ChartLegend dataExample={data} />
     </section>
   );
 }
