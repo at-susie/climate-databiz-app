@@ -40,6 +40,7 @@ $transition-expressive: cubic-bezier(.5,0,.5,1) 0.2s;
 // Global Settings
 body {
   font-family: $font_sans;
-  color: $grey-100;;
+  color: $grey-100;
+  background-color: $grey-900;
 }
 

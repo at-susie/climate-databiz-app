@@ -1,55 +1,52 @@
-
 @import "./Global.scss";
 
 .AppLayout {
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-    background: black;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background: black;
 }
 
 section {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    position: relative;
-    overflow: hidden;
-    background: $grey-1000;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  overflow: hidden;
+  background: $grey-1000;
+  @media (orientation: portrait) {
+    height: auto;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 1px;
+    width: calc(100% - 64px);
+    background: $grey-700;
     @media (orientation: portrait) {
-      height: auto;
-    }
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      height: 1px;
-      width: calc(100% - 64px);
-      background: $grey-700;
-      @media (orientation: portrait) {
-        width: calc(100% - 48px);
-      }
+      width: calc(100% - 48px);
     }
   }
-  
-  .MainChartArea {
-    height: calc(100vh - 280px);
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    //overflow: hidden;
-    @media (orientation: portrait) {
-      height: calc(100vh - 320px);
-    }
+}
+
+.MainChartArea {
+  height: calc(100vh - 280px);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //overflow: hidden;
+  @media (orientation: portrait) {
+    height: calc(100vh - 320px);
   }
-  
-  .toolTipContainer {
-    background: #fff;
-    border-radius: 8px;
-    padding: 8px;
-    color: $grey-1000;
-  }
-  
-  
+}
+
+.toolTipContainer {
+  background: #fff;
+  border-radius: 8px;
+  padding: 8px;
+  color: $grey-1000;
+}
