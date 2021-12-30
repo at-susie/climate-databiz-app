@@ -10,6 +10,7 @@ const breakPoint = 960;
 function SideNav(props) {
   const [isMobile, setIsMobile] = useState(true)
   const [drawerOpen, setDrawerOpen] = useState(false)
+  const [isOpen, setOpen] = useState(false)
 
   //choose the screen size 
   const handleResize = () => {
@@ -78,8 +79,8 @@ function SideNav(props) {
             Is nuclear power dangerous?
           </AnchorLink>
         </li>
-        <li className="SideMenuItem" onClick={handleCloseNav}>
-          <AnchorLink href="#test3">
+        <li className="SideMenuItem">
+          <AnchorLink href="#sectionCovidClimate" onClick={handleCloseNav}>
             Comparison in death rate between COVID-19 and climate change
           </AnchorLink>
         </li>

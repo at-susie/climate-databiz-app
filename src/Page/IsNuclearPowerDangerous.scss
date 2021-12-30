@@ -1,11 +1,16 @@
 @import "../Global.scss";
 
 #sectionNuclear {
-  h3,
-  .plainDescription {
+  h3 {
     padding: 16px 32px 24px 32px;
     @media (orientation: portrait) {
       padding: 4px 20px 4px 20px;
+    }
+  }
+  .plainDescription {
+    padding: 16px 32px 24px 32px;
+    @media (orientation: portrait) {
+      padding: 4px 20px 32px 20px;
     }
   }
 }

@@ -11,7 +11,9 @@ header {
     font-size: $font_size_h1;
     margin: 0 0 8px 0;
   }
-  
+  .description {
+    font-size: $font_size_body_medium;
+  }
 }
 
 @media (orientation: portrait) {
