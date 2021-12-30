@@ -34,14 +34,14 @@ section {
   }
   
   .MainChartArea {
-    height: calc(100vh - 240px);
+    height: calc(100vh - 280px);
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     @media (orientation: portrait) {
-      //height: 360px;
+      height: calc(100vh - 320px);
     }
   }
   
