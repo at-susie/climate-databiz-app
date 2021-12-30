@@ -115,7 +115,7 @@ function Electricity(props) {
   return (
     <section id={props.id}>
       <Header
-        HeaderTitle="Electricity"
+        HeaderTitle="Greenhouse gas emitted from electricity"
         PageDescription="27% of 51 billion tons of greenhouse gases are produced from electricity."
       />
       <DonutChart />

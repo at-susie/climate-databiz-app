@@ -121,7 +121,7 @@ function Transportation(props) {
   return (
     <section id={props.id}>
       <Header
-        HeaderTitle="Transportation"
+        HeaderTitle="Greenhouse gas emitted from transportation"
         PageDescription="Transportation sector is responsible for 16% (8.2 billion tons) of 51 billion tons of greenhouse gases per year."
       />
       <DonutChart />

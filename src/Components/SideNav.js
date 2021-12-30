@@ -61,7 +61,7 @@ function SideNav(props) {
         </li>
         <li className="SideMenuItem">
           <AnchorLink href="#sectionElectricity" onClick={handleCloseNav}>
-            Electricity
+            Greenhouse gas emitted from electricity
           </AnchorLink>
         </li>
         <li className="SideMenuItem">
@@ -71,7 +71,7 @@ function SideNav(props) {
         </li>
         <li className="SideMenuItem">
           <AnchorLink href="#sectionTransportation" onClick={handleCloseNav}>
-            Transportation
+            Greenhouse gas emitted from transportation
           </AnchorLink>
         </li>
         <li className="SideMenuItem">
