@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./MainContainer.scss";
-import MainContentCover from "./MainContentCover";
+import MainContentCover from "../Page/MainContentCover";
 import ThingsWeDo from "../Page/ThingsWeDo";
 import Electricity from "../Page/Electricity";
 import Transportation from "../Page/Transportation";

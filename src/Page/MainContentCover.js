@@ -13,6 +13,7 @@ function MainContentCover(props) {
           loop={true}
           muted={true}
           autoplay={true}
+          controls={true}
         />
       </div>
     </div>

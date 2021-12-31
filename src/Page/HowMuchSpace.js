@@ -24,7 +24,14 @@ const rows = [
 
 function HowMuchSpaceTable() {
   return (
-    <TableContainer component={Paper}>
+    <TableContainer
+      component={Paper}
+      sx={{
+        backgroundColor: "#161617",
+        boxShadow: 'none',
+        // minWidth: 680,
+      }}
+    >
       <Table
         sx={{
           backgroundColor: "#161617",

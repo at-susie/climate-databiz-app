@@ -30,10 +30,15 @@ section {
       width: calc(100% - 48px);
     }
   }
+  &:last-child {
+    &::after {
+      height: 0px;
+    }
+  }
 }
 
 .MainChartArea {
-  height: calc(100vh - 280px);
+  height: calc(100vh - 320px);
   width: 100%;
   display: flex;
   justify-content: center;

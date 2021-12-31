@@ -63,12 +63,11 @@ const margin = {
   left: window.innerHeight > window.innerWidth ? 20 : 40,
 };
 
-
 function DonutChart(props) {
   const windowWidth = window.innerWidth;
   const windowHeight = window.innerHeight;
   return (
-    <div className="MainChartThingsWeDo MainChartArea">
+    <div className="MainChartThingsWeDo MainChartArea" >
       <ResponsivePie
         data={data}
         valueFormat={(value) =>
