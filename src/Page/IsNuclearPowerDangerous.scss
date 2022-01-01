@@ -18,9 +18,5 @@
 .barchartContainer {
   width: 100%;
   //height: calc(100vh - 280px);
-  height: 520px;
-  z-index: 5000;
-  @media (max-width: 400px) {
-    height: 320px;
-  }
+  height: 100%;
 }

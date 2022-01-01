@@ -74,9 +74,9 @@ section {
   @media ( max-width: 400px ) {
     height: 340px;
   }
-  &.MainChartContainerIsNuclear,  {
+  &.MainChartContainerIsNuclear  {
     @media ( max-width: 400px ) {
-      padding: 32px 0;
+      padding: 40px 0;
     }
   }
 }

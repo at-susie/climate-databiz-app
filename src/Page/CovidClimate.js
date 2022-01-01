@@ -29,11 +29,11 @@ const data = [
 const theme = {
   //background: "#2c2c2e",
   fontSize: window.innerWidth < 440 ? "13px" : "16px",
-  
+
   labels: {
     text: {
       fontWeight: 900,
-    }
+    },
   },
   axis: {
     textColor: "#ccc",
@@ -96,32 +96,34 @@ const ValueOutside = ({ bars }) => {
 function BarChart(props) {
   return (
     <div className="MainChartContainerIsNuclear MainChartArea">
-      <div className="barchartContainer">
-        <ResponsiveBar
-          data={data}
-          margin={margin}
-          theme={theme}
-          label={d => `${d.value}` + " per 100,000 people"}
-          //colors={["#79C6E3", "#F05D28", "#FF9833", "#5C7FE6", "#13AAB3"]}
-          tooltip={(datum) => {
-            //console.log(datum.unit);
-            return <div className="toolTipContainer">{datum.value} deaths per 100,000 people</div>;
-          }}
-          animate={true}
-          motionStiffness={90}
-          motionDamping={15}
-          axisLeft={false}
-          layers={[
-            "grid",
-            "axes",
-            "bars",
-            "markers",
-            "legends",
-            "annotations",
-            //(props) => <ValueOutside {...props} />,
-          ]}
-        />
-      </div>
+      <ResponsiveBar
+        data={data}
+        margin={margin}
+        theme={theme}
+        label={(d) => `${d.value}` + " per 100,000 people"}
+        //colors={["#79C6E3", "#F05D28", "#FF9833", "#5C7FE6", "#13AAB3"]}
+        tooltip={(datum) => {
+          //console.log(datum.unit);
+          return (
+            <div className="toolTipContainer">
+              {datum.value} deaths per 100,000 people
+            </div>
+          );
+        }}
+        animate={true}
+        motionStiffness={90}
+        motionDamping={15}
+        axisLeft={false}
+        layers={[
+          "grid",
+          "axes",
+          "bars",
+          "markers",
+          "legends",
+          "annotations",
+          //(props) => <ValueOutside {...props} />,
+        ]}
+      />
     </div>
   );
 }
@@ -138,7 +140,5 @@ function CovidClimate(props) {
     </section>
   );
 }
-
-
 
 export default CovidClimate;

@@ -106,40 +106,38 @@ const ValueOutside = ({ bars }) => {
 function BarChart(props) {
   return (
     <div className="MainChartContainerIsNuclear MainChartArea">
-      <div className="barchartContainer">
-        <ResponsiveBar
-          data={data}
-          margin={margin}
-          theme={theme}
-          label={false}
-          tooltip={(datum) => {
-            console.log(datum.value);
-            return <div className="toolTipContainer">{datum.value}%</div>;
-          }}
-          //colors={["#79C6E3", "#F05D28", "#FF9833", "#5C7FE6", "#13AAB3"]}
-          animate={true}
-          motionStiffness={90}
-          motionDamping={15}
-          axisLeft={{
-            tickSize: 5,
-            tickPadding: 5,
-            tickRotation: 0,
-            legend: "Deaths per TWh (%)",
-            legendPosition: "middle",
-            legendOffset: -40,
-            fontSize: "14px",
-          }}
-          layers={[
-            "grid",
-            "axes",
-            "bars",
-            "markers",
-            "legends",
-            "annotations",
-            (props) => <ValueOutside {...props} />,
-          ]}
-        />
-      </div>
+      <ResponsiveBar
+        data={data}
+        margin={margin}
+        theme={theme}
+        label={false}
+        tooltip={(datum) => {
+          console.log(datum.value);
+          return <div className="toolTipContainer">{datum.value}%</div>;
+        }}
+        //colors={["#79C6E3", "#F05D28", "#FF9833", "#5C7FE6", "#13AAB3"]}
+        animate={true}
+        motionStiffness={90}
+        motionDamping={15}
+        axisLeft={{
+          tickSize: 5,
+          tickPadding: 5,
+          tickRotation: 0,
+          legend: "Deaths per TWh (%)",
+          legendPosition: "middle",
+          legendOffset: -40,
+          fontSize: "14px",
+        }}
+        layers={[
+          "grid",
+          "axes",
+          "bars",
+          "markers",
+          "legends",
+          "annotations",
+          (props) => <ValueOutside {...props} />,
+        ]}
+      />
     </div>
   );
 }
