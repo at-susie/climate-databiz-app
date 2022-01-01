@@ -45,7 +45,7 @@ const theme = {
       fontSize: 17,
       fontWeight: "bold",
       fontFamily: "Source Sans Pro, sans-serif",
-      //fill: '#ccc'
+      fill: '#161617'
     },
   },
   legends: {
@@ -110,7 +110,7 @@ function DonutChart(props) {
       />
       <DonutView
         emphasizedValue="51"
-        unitType="billion tons / year"
+        unitType="billion tons per year"
       />
     </div>
   );

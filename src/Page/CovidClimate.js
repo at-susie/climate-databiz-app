@@ -28,7 +28,13 @@ const data = [
 
 const theme = {
   //background: "#2c2c2e",
-  fontSize: "14px",
+  fontSize: "16px",
+  
+  labels: {
+    text: {
+      fontWeight: 900,
+    }
+  },
   axis: {
     textColor: "#ccc",
     tickColor: "#eee",
@@ -76,7 +82,7 @@ const ValueOutside = ({ bars }) => {
           //transform={`translate(${width}, ${height })`}
           textAnchor="middle"
           fontSize="16px"
-          fontWeight={600}
+          fontWeight="bold"
           fill="#ccc"
         >
           {/* YOUR LABEL HERE */}

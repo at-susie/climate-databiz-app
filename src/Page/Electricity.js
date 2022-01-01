@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Header from "../Components/Header";
 import ChartLegend from "../Components/ChartLegend";
 import { ResponsivePie } from "@nivo/pie";
+import DonutView from "../Components/DonutView";
 import "./Electricity.scss";
 
 
@@ -9,33 +10,45 @@ import "./Electricity.scss";
 const data = [
   {
     id: "Coal",
-    label: "Coal",
+    //label: "Coal",
     value: 36,
     color: "#F05D28",
   },
   {
     id: "Natural gas",
-    label: "Natural gas",
+    //label: "Natural gas",
     value: 23,
     color: "#FF9833",
   },
   {
     id: "Hydropower",
-    label: "Hydropower",
+    //label: "Hydropower",
     value: 16,
     color: "#5C7FE6",
   },
   {
     id: "Nuclear",
-    label: "Nuclear",
+    //label: "Nuclear",
     value: 10,
     color: "#13AAB3",
   },
   {
     id: "Renewables",
-    label: "Renewables",
+    //label: "Renewables",
     value: 11,
-    color: "#13AAB3",
+    color: "#79C6E3",
+  },
+  {
+    id: "Oil",
+    //label: "Oil",
+    value: 3,
+    color: "#BF60F0",
+  },
+  {
+    id: "Other",
+    //label: "Other",
+    value: 1,
+    color: "#CAF060",
   }
 ];
 
@@ -45,7 +58,7 @@ const theme = {
       fontSize: 17,
       fontWeight: "bold",
       fontFamily: "Source Sans Pro, sans-serif",
-      //fill: '#ccc'
+      fill: '#161617'
     },
   },
   legends: {
@@ -77,7 +90,7 @@ function DonutChart(props) {
         margin={margin}
         tooltip={(label) => {
           console.log(label.datum.label);
-          return <div className="toolTipContainer">{label.datum.label}</div>;
+          return <div className="toolTipContainer">{label.datum.label}: {label.datum.value}%</div>;
         }}
         innerRadius={windowHeight > windowWidth ? 0.6 : 0.7}
         startAngle={10}
@@ -86,7 +99,7 @@ function DonutChart(props) {
         cornerRadius={1}
         activeOuterRadiusOffset={8}
         theme={theme}
-        colors={["#F05D28", "#FF9833", "#5C7FE6", "#13AAB3", "#79C6E3"]}
+        colors={["#F05D28", "#FF9833", "#5C7FE6", "#13AAB3", "#79C6E3", "#BF60F0", "#CAF060"]}
         radialLabelsSkipAngle={10}
         radialLabelsTextXOffset={6}
         enableArcLinkLabels={windowHeight < windowWidth ? true : false}
@@ -106,6 +119,10 @@ function DonutChart(props) {
         animate={true}
         motionStiffness={90}
         motionDamping={15}
+      />
+      <DonutView
+        emphasizedValue="27%"
+        unitType="of 51 billion tons per year"
       />
     </div>
   );

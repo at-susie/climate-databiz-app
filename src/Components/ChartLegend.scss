@@ -14,23 +14,32 @@
   padding: 56px 8px;
   @media (orientation: portrait) {
     flex-wrap: wrap;
-    padding: 16px 0 8px 0;
+    padding: 8px 4px 32px 16px;
   }
   .chartLegendItem {
     margin-right: 24px;
     list-style-type: none;
-    display: flex;
     padding: 4px 0;
-    .legendColor {
-      width: 16px;
-      height: 16px;
-      border-radius: 4px;
-      margin-right: 8px;
+    .upper {
+      display: flex;
+      align-items: center;
+      .legendColor {
+        width: 16px;
+        height: 16px;
+        border-radius: 4px;
+        margin-right: 8px;
+      }
+      .legendTitle {
+        font-size: $font_size_body_medium;
+        font-weight: 900;
+      }
     }
-    .legendTitle {
-      font-size: $font_size_body;
-      font-weight: 900;
-      margin-bottom: 4px;
+    .lower {
+      .legendDescription {
+        font-size: $font_size_body_medium;
+        padding-left: 24px;
+      }
     }
+    
   }
 }

@@ -24,13 +24,14 @@ function MainContainer(props) {
 
   return (
     <div className={`mainContainer ${isMobile ? "isMobile" : "isDesktop"}`}>
-      <MainContentCover id="sectionCover"/>
+      
       <ThingsWeDo id="sectionThingsWeDo" />
       <Electricity id="sectionElectricity" />
       <HowMuchSpace id="sectionHowMuchSpace" />
       <IsNuclearPowerDangerous id="sectionNuclear" />
       <Transportation id="sectionTransportation" />
       <CovidClimate id="sectionCovidClimate"/>
+      {/* <MainContentCover id="sectionCover"/> */}
     </div>
   );
 }

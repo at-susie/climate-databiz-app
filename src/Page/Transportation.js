@@ -8,31 +8,31 @@ import "./Transportation.scss";
 const data = [
   {
     id: "Passenger cars",
-    label: "Cars, SUVs, and motorcycles",
+    //label: "Cars, SUVs, and motorcycles",
     value: 47,
     color: "#F05D28",
   },
   {
     id: "Gerbage trucks, buses, etc.",
-    label: "Gerbage trucks, buses, etc.",
+    //label: "Gerbage trucks, buses, etc.",
     value: 30,
     color: "#FF9833",
   },
   {
     id: "Cargo and cruise ships",
-    label: "Cargo and cruise ships",
+    //label: "Cargo and cruise ships",
     value: 10,
     color: "#5C7FE6",
   },
   {
     id: "Airplanes",
-    label: "Airplanes",
+    //label: "Airplanes",
     value: 10,
     color: "#13AAB3",
   },
   {
     id: "Other",
-    label: "Other",
+    //label: "Other",
     value: 3,
     color: "#13AAB3",
   },
@@ -44,7 +44,7 @@ const theme = {
       fontSize: 17,
       fontWeight: "bold",
       fontFamily: "Source Sans Pro, sans-serif",
-      //fill: '#ccc'
+      fill: '#161617'
     },
   },
   legends: {
@@ -109,8 +109,8 @@ function DonutChart(props) {
         motionDamping={15}
       />
       <DonutView
-        emphasizedValue="0"
-        unitType="unit"
+        emphasizedValue="16%"
+        unitType="of 51 billion tons per year"
       />
 
     </div>
