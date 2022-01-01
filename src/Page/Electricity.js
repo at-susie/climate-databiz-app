@@ -92,7 +92,7 @@ function DonutChart(props) {
           console.log(label.datum.label);
           return <div className="toolTipContainer">{label.datum.label}: {label.datum.value}%</div>;
         }}
-        innerRadius={windowHeight > windowWidth ? 0.6 : 0.7}
+        innerRadius={0.7}
         startAngle={10}
         endAngle={370}
         padAngle={0.8}

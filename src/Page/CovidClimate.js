@@ -28,7 +28,7 @@ const data = [
 
 const theme = {
   //background: "#2c2c2e",
-  fontSize: "16px",
+  fontSize: window.innerWidth < 440 ? "13px" : "16px",
   
   labels: {
     text: {
@@ -81,7 +81,7 @@ const ValueOutside = ({ bars }) => {
         <text
           //transform={`translate(${width}, ${height })`}
           textAnchor="middle"
-          fontSize="16px"
+          fontSize="15px"
           fontWeight="bold"
           fill="#ccc"
         >

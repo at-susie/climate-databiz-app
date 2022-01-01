@@ -70,7 +70,7 @@ const theme = {
 };
 
 const margin = {
-  top: window.innerHeight > window.innerWidth ? 20 : 40,
+  top: window.innerHeight > window.innerWidth ? 40 : 40,
   right: window.innerHeight > window.innerWidth ? 24 : 160,
   bottom: window.innerHeight > window.innerWidth ? 32 : 40,
   left: window.innerHeight > window.innerWidth ? 72 : 160,
