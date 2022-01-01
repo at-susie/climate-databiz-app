@@ -1,0 +1,28 @@
+@import "../Global.scss";
+
+#sectionDisclaimer {
+  padding: 120px 32px;
+  .disclaimerContainer {
+    margin-bottom: 32px;
+    a {
+      color: $blue-500;
+      transition: 0.2s ease;
+      &:hover {
+        color: #97b1ff;
+      }
+    }
+
+    @media (orientation: portrait) {
+      padding: 40px 24px 24px 24px;
+    }
+  }
+  img {
+    height: 120px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    border-radius: 2px;
+    transition: $transition-expressive;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
